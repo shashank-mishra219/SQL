@@ -1,5 +1,9 @@
 ---Command to create DATABASE
 Create DATABASE BigDataBootCamp;
+Create DATABASE Test;
 
 ---To list down all the databases
 Show Databases;
+
+---Command to drop a DATABASE
+Drop DATABASE Test;
