@@ -7,3 +7,6 @@ Show Databases;
 
 ---Command to drop a DATABASE
 Drop DATABASE Test;
+
+--- Go inside the particular DATABASE
+use BigDataBootCamp;
