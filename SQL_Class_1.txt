@@ -1,0 +1,5 @@
+---Command to create DATABASE
+Create DATABASE BigDataBootCamp;
+
+---To list down all the databases
+Show Databases;
