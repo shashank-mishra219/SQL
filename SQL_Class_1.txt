@@ -17,3 +17,10 @@ Create table if not exists employee
     id int,
     name VARCHAR(50)
 );
+
+---Command to list down all the TABLES
+show tables;
+
+
+---Command to list down all the TABLES
+show create table employee;
