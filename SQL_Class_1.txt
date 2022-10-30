@@ -10,3 +10,10 @@ Drop DATABASE Test;
 
 --- Go inside the particular DATABASE
 use BigDataBootCamp;
+
+--- Command to create a TABLE
+Create table if not exists employee
+(
+    id int,
+    name VARCHAR(50)
+);
