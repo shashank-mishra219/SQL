@@ -30,3 +30,16 @@ select * from employee;
 
 --- rename the column name to full_name
 alter table employee rename column name to full_name;
+
+
+
+--- add unique integrity constraint on id COLUMN
+
+alter table employee add constraint id_unique UNIQUE(id);
+
+insert into employee values(1, 'Shashank', 'RJPM', '2021-08-09');
+
+--- drop constraint from existing TABLE
+alter table employee drop constraint id_unique;
+
+insert into employee values(1, 'Shashank', 'RJPM', '2021-08-09');
