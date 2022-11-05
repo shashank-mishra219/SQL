@@ -81,3 +81,22 @@ select * from persons;
 insert into persons values(4,'Charan',null);
 
 insert into persons values(5,'Deepak',null);
+
+
+--- create tables for Foreign Key demo
+create table customer
+(
+    cust_id int,
+    name VARCHAR(50), 
+    age int,
+    constraint pk Primary Key (cust_id) 
+);
+
+create table orders
+(
+    order_id int,
+    order_num int,
+    customer_id int,
+    constraint pk Primary Key (order_id),
+    constraint fk Foreign Key (customer_id) REFERENCES customer(cust_id)
+);
