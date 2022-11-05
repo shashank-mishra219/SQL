@@ -1,0 +1,23 @@
+Create database class2_db;
+
+use class2_db;
+
+create table if not exists employee(
+    id int,
+    name VARCHAR(50),
+    address VARCHAR(50),
+    city VARCHAR(50)
+);
+
+insert into employee values(1, 'Shashank', 'RJPM', 'Lucknow');
+
+select * from employee;
+
+--- add new column named DOB in the TABLE
+alter table employee add DOB date;
+
+select * from employee;
+
+
+--- modify existing column in a TABLE or change datatype of name column or increase lenght of name column
+alter table employee modify column name varchar(100);
