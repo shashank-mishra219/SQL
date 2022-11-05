@@ -70,6 +70,7 @@ Create table persons
     name varchar(50), 
     age int,
     ---Primary Key (id) 
+    ---Primary key(id,name)
     constraint pk Primary Key (id) 
 );
 
