@@ -61,3 +61,10 @@ select * from employee order by salary desc, name asc;
 
 # when we ignore multilevel ordering
 select * from employee order by salary desc;
+
+# Write a query to find the employee who is getting maximum salary?
+select * from employee order by salary desc limit 1;
+
+
+# Write a query to find the employee who is getting minium salary?
+select * from employee order by salary limit 1;
