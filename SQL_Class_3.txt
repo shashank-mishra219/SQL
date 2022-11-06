@@ -38,3 +38,7 @@ insert into auto_inc_exmp(name) values('Shashank');
 insert into auto_inc_exmp(name) values('Rahul');
 
 select * from auto_inc_exmp;
+
+--- Use of limit 
+select * from employee;
+select * from employee limit 2;
