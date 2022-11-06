@@ -107,3 +107,25 @@ select * from employee where hiring_date between '2021-08-05' and '2021-08-11';
 
 # get all employees data who are getting salary in the range of 10000 to 28000
 select * from employee where salary between 10000 and 28000;
+
+# how to use LIKE operation in where clause
+# % -> Zero, one or more than one characters
+# _ -> only one character
+
+# get all those employees whose name starts with 'S'
+select * from employee where name like 'S%';
+
+# get all those employees whose name starts with 'Sh'
+select * from employee where name like 'Sh%';
+
+# get all those employees whose name ends with 'l'
+select * from employee where name like '%l';
+
+# get all those employees whose name starts with 'S' and ends with 'k'
+select * from employee where name like 'S%k';
+
+# Get all those employees whose name will have exact 5 characters
+select * from employee where name like '_____';
+
+# Return all those employees whose name contains atleast 5 characters
+select * from employee where name like '%_____%';
