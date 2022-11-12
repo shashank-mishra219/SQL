@@ -58,3 +58,27 @@ select * from employees;
 
 # Wrong solution -> select * from employees where salary > 6000; 
 select * from employees where salary > (select salary from employees where name='Rohit');
+
+# Use of IN and NOT IN
+# Write a query to print all orders which were placed in 'Seattle' or 'Goa'
+select * from orders_data;
+
+SELECT * FROM orders_data WHERE state in ('Seattle', 'Goa');
+
+create table customer_order_data
+(
+    order_id int,
+    cust_id int,
+    supplier_id int,
+    cust_country varchar(50)
+);
+
+insert into customer_order_data values(101,200,300,'USA'),(102,201,301,'INDIA'),(103,202,302,'USA'),(104,203,303,'UK');
+
+create table supplier_data
+(
+    supplier_id int,
+    sup_country varchar(50)
+);
+
+insert into supplier_data values(300,'USA'),(303,'UK');
