@@ -82,3 +82,8 @@ create table supplier_data
 );
 
 insert into supplier_data values(300,'USA'),(303,'UK');
+
+# write a query to find all customer order data where all coustomers are from same countries 
+# as the suppliers
+select * from customer_order_data where cust_country in 
+(select distinct sup_country from supplier_data);
