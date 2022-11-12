@@ -55,3 +55,6 @@ insert into employees values(1,'Shashank',5000),(2,'Amit',5500),(3,'Rahul',7000)
 select * from employees;
 
 # Write a query to print all those employee records who are getting more salary than 'Rohit'
+
+# Wrong solution -> select * from employees where salary > 6000; 
+select * from employees where salary > (select salary from employees where name='Rohit');
