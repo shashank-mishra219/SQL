@@ -124,3 +124,58 @@ insert into supplier_data values(300,'USA'),(303,'UK');
 # as the suppliers
 select * from customer_order_data where cust_country in 
 (select distinct sup_country from supplier_data);
+
+# Case When in SQL
+Create table student_marks
+(
+    stu_id int,
+    stu_name varchar(50),
+    total_marks int
+);
+
+insert into student_marks values(1,'Shashank',50);
+insert into student_marks values(2,'Rahul',91);
+insert into student_marks values(3,'Amit',74);
+insert into student_marks values(4,'Nikhil',65);
+insert into student_marks values(5,'Rohit',86);
+insert into student_marks values(6,'Deepak',77);
+
+select * from student_marks;
+
+# Write a query to caluclate the grades for a student by following below criteria
+# marks >= 90 , grade A+
+# marks < 90 and marks >=85, grade A
+# marks < 85 and marks >=75, grade B+
+# marks < 75 and marks >=60, grade B
+# marks < 60 , grade C
+
+select stu_id,
+       stu_name,
+       total_marks,
+       case 
+            when total_marks >=90 then 'A+'
+            when total_marks >= 85 and total_marks < 90 then 'A'
+            when total_marks >= 75 and total_marks < 85 then 'B+'
+            when total_marks >= 60 and total_marks < 75 then 'B'
+            else 'C'
+       end as grade
+from student_marks;
+
+# Uber SQL Interview questions
+create table tree
+(
+    node int,
+    parent int
+);
+
+insert into tree values (5,8),(9,8),(4,5),(2,9),(1,5),(3,9),(8,null);
+
+select * from tree;
+
+select node,
+       CASE
+            when node not in (select distinct parent from tree where parent is not null) then 'LEAF'
+            when parent is null then 'ROOT'
+            else 'INNER'
+       END as node_type
+from tree;
