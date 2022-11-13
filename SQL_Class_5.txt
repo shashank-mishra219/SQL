@@ -223,3 +223,12 @@ select sales_date,
        lag(sales_amount, 1, 0) over(order by sales_date) as prev_day_sales,
        sales_amount - lag(sales_amount, 1, 0) over(order by sales_date) as sales_diff
 from daily_sales;
+
+# Diff between lead and lag
+select *,
+      lag(sales_amount, 1) over(order by sales_date) as pre_day_sales
+from daily_sales;
+
+select *,
+      lead(sales_amount, 1) over(order by sales_date) as next_day_sales
+from daily_sales;
