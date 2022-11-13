@@ -153,3 +153,12 @@ insert into employees values(9,12000,'HR');
 insert into employees values(10,11000,'HR');
 
 select * from employees;
+
+# Query - get one employee from each department who is getting maximum salary (employee can be random if salary is same)
+
+select 
+    tmp.*
+from (select *,
+        row_number() over(partition by dept_name order by salary desc) as row_num
+    from employees) tmp
+where tmp.row_num = 1;
