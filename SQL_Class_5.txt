@@ -1,1 +1,43 @@
 
+create database test;
+
+use test;
+
+create table customers
+(
+    id int,
+    name varchar(50)
+);
+
+create table orders
+(
+    order_id int,
+    amount int,
+    cust_id int
+);
+
+insert into customers values(1,'John');
+
+insert into customers values(2,'David');
+
+insert into customers values(3,'Ronn');
+
+insert into customers values(4,'Betty');
+
+
+insert into orders values(1,100,10);
+
+insert into orders values(2,500,3);
+
+insert into orders values(3,300,6);
+
+insert into orders values(4,800,2);
+
+insert into orders values(5,350,1);
+
+select * from customers;
+
+select * from orders;
+
+# Get the orders information along with customers full details
+# if order amount were greater than 400
