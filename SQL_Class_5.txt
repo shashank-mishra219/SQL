@@ -162,3 +162,28 @@ from (select *,
         row_number() over(partition by dept_name order by salary desc) as row_num
     from employees) tmp
 where tmp.row_num = 1;
+
+# Query - get one employee from each department who is getting maximum salary (employee can be random if salary is same)
+
+select 
+    tmp.*
+from (select *,
+        row_number() over(partition by dept_name order by salary desc) as row_num
+    from employees) tmp
+where tmp.row_num = 1;
+
+# Query - get all employees from each department who are getting maximum salary
+select 
+    tmp.*
+from (select *,
+        rank() over(partition by dept_name order by salary desc) as rank_num
+    from employees) tmp
+where tmp.rank_num = 1;
+  
+# Query - get all top 2 ranked employees from each department who are getting maximum salary
+select 
+    tmp.*
+from (select *,
+        dense_rank() over(partition by dept_name order by salary desc) as dense_rank_num
+    from employees) tmp
+where tmp.dense_rank_num <= 2;
