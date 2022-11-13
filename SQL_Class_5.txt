@@ -41,3 +41,29 @@ select * from orders;
 
 # Get the orders information along with customers full details
 # if order amount were greater than 400
+
+select c.*,o.* 
+from orders o
+inner join customers c on o.cust_id=c.id
+where o.amount >400;
+
+select c.*,o.* 
+from orders o
+inner join customers c on o.cust_id=c.id and o.amount >400;
+
+
+# Window Functions
+create table shop_sales_data
+(
+sales_date date,
+shop_id varchar(5),
+sales_amount int
+);
+
+insert into shop_sales_data values('2022-02-14','S1',200);
+insert into shop_sales_data values('2022-02-15','S1',300);
+insert into shop_sales_data values('2022-02-14','S2',600);
+insert into shop_sales_data values('2022-02-15','S3',500);
+insert into shop_sales_data values('2022-02-18','S1',400);
+insert into shop_sales_data values('2022-02-17','S2',250);
+insert into shop_sales_data values('2022-02-20','S3',300);
