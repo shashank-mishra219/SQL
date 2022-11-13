@@ -87,3 +87,17 @@ select *,
 from shop_sales_data;
 
 select shop_id, count(*) as total_sale_count_by_shops from shop_sales_data group by shop_id;
+
+create table amazon_sales_data
+(
+    sales_data date,
+    sales_amount int
+);
+
+insert into amazon_sales_data values('2022-08-21',500);
+insert into amazon_sales_data values('2022-08-22',600);
+insert into amazon_sales_data values('2022-08-19',300);
+
+insert into amazon_sales_data values('2022-08-18',200);
+
+insert into amazon_sales_data values('2022-08-25',800);
