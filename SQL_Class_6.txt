@@ -32,7 +32,77 @@ create view department_wise_salary as select dept_name, sum(salary) as total_sal
 
 select * from department_wise_salary;
 
+# Union and Union all
+
+create table student
+(
+    stu_id int,
+    name varchar(50), 
+    email varchar(50), 
+    city varchar(50)
+ );
+ 
+ insert into student values(1,'Shashank','abc@gmail.com', 'lucknow');
+ insert into student values(2,'Rahul','abc1@gmail.com', 'mp');
+  insert into student values(3,'Amit','ab2@gmail.com', 'noida');
+   insert into student values(4,'Nikhil','abc3@gmail.com', 'bangalore');
+    insert into student values(5,'Sunny','ab4@gmail.com', 'bangalore');
+    
+create table student2
+(
+    stu_id int,
+    name varchar(50), 
+    email varchar(50), 
+    city varchar(50)
+ );
 
 
+insert into student2 values(1,'Shashank','abc@gmail.com', 'lucknow');
+ insert into student2 values(6,'Anuj','abc5@gmail.com', 'mp');
+  insert into student2 values(8,'Mohit','ab7@gmail.com', 'noida');
+   insert into student2 values(10,'Sagar','abc10@gmail.com', 'bangalore');
+    insert into student2 values(5,'Sunny','ab4@gmail.com', 'bangalore');
+    
+select * from student2;
 
+
+--- We are organizing an tournament between College-1 and College-2, we need details of all students from both college
+select * from student
+UNION
+select * from student2;
+
+--- how to use union all
+select * from student
+UNION ALL
+select * from student2;
+
+--- Case 1 - Not Failed
+
+select stu_id, `name` from student
+UNION
+select `name`, stu_id from student2;
+
+--- Case 2 - Not Failed
+select stu_id, name from student
+UNION
+select stu_id, name from student2;
+
+--- Case 3 - Not Failed
+select stu_id as stu_id_college_1 , name from student
+UNION
+select stu_id as stu_id_college_2, name from student2;
+
+--- Case 4 - Not Failed
+select stu_id from student
+UNION
+select email from student2;
+
+
+select 1 as salary
+UNION
+select 'Shashank' as name;
+
+select 1 as salary, 'Hello' as message
+UNION
+select 'Shashank' as name;
 
