@@ -147,3 +147,15 @@ from dept_wise_salary tmp
 inner join department d on tmp.dept_id = d.dept_id;
 
 select * from dept_wise_salary;
+
+
+--- Write a Query to generate numbers from 1 to 10 in SQL
+
+with recursive generate_numbers as   
+(
+  select 1 as n
+  union 
+  select n+1 from generate_numbers where n<10
+) 
+
+select * from generate_numbers;
